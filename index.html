@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./app.js"></script>
+</head>
+<body>
+    <div id="wrap-lists" class="color-while">
+        <h2 class="title">My lists</h2>
+        <form action="" id='form-add-list'>
+            <input
+            id="input-add-list"
+            class="input-add backgorup background-root"
+             type="text"
+            placeholder="new list"
+            >
+        </form>
+        
+        <ul id="lists"></ul>
+    </div>
+
+    <div id="wrap-tasks">
+        <div id="header-task">
+           <h3 id="title">Title</h3>
+           <span id="total-tasks">5</span>
+        </div>
+        <div id="body-task"></div>
+        <form class="new-task" id="form-add-task" action="">
+            <input
+            id="input-task"
+            placeholder="new task"
+            type="text">
+        </form>
+    </div>
+    <div class="container-delete" data-delete>
+        <button class="delete-btn" data-clear-lists>clear completed lists</button>
+        <button class="delete-btn" data-delete-tasks>delete tasks</button>
+    </div>
+
+    <template data-temp>
+        <!-- ahihi -->
+        <div>
+            Hello word
+        </div>
+    </template>
+</body>
+</html>
