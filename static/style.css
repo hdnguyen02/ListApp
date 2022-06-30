@@ -1,25 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@200;300;500&display=swap');
 * { 
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family:  sans-serif;
 }
-
 
 :root {
-  --root-color:#0072B5; 
-
-}
-
-li { 
-  list-style: none;
-}
-
-input { 
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
+  --root-color:#34568B; 
 }
 
 body { 
@@ -30,91 +17,167 @@ body {
   align-items: center;
 }
 
-
-/* todo CSS lists */
-#wrap-lists { 
+.wrap-list { 
   height: 400px; 
+  width: 300px;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
-#wrap-lists > h2,#wrap-lists > form  { 
+.wrap-list .title { 
+  font-size: 2rem;
   margin-bottom: 12px; 
 }
 
-#lists { 
-  height: 100%;
-  overflow-y: auto;
-}
-#lists > li { 
-  cursor: pointer;
-  font-size: 12px;
+.non-display-task { 
+  display: none !important; 
 }
 
+
+
+.lists { 
+  height: 100%;
+  overflow-y: auto;
+  list-style-type: circle;
+  list-style-position: inside; 
+}
+
+.list { 
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 0px;
+}
+
+
+
 .active-list { 
-  font-size: 16px !important; 
+  font-size: 16px;
   color: yellow;
 }
 
 
 /* todo CSS tasks */
-#wrap-tasks { 
-  background-color: white;
-  height: 300px;
+.wrap-task { 
+  height: 360px;
   width: 500px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border: none;
-  border-radius: 2px;
   display: flex;
   flex-direction: column;
 }
 
-#header-task { 
+
+.task {
+  height: 300px;
+  background-color: white;
+}
+
+[data-display-task='flex'] { 
+  display: flex;
+  flex-direction: column;
+}
+
+[data-display-task='none'] { 
+  display: none;
+}
+
+
+.header-task { 
   background-color: rgba(0, 0, 0, 0.1);
   padding: 0px 24px;
   height: 62px;
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#header-task > h3 { 
-  font-size: 1.5rem;
-}
-
-#body-task,.new-task { 
-  padding: 0px 24px; 
-}
-
-#body-task { 
+.body-task {
   height: 100%;
+  padding: 12px 24px; 
   overflow-y: auto;
 }
 
-.new-task { 
+
+.task-not-complete { 
+  font-size: 0.75rem; 
+  
+}
+
+
+.add-form { 
+  position: relative;
   margin-bottom: 12px;
 }
 
-.color-while { 
+.icon-plus {
+    position: absolute;
+    top: 50%;  
+    left: 2px;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+
+#wrap-list .icon-plus { 
   color: white;
 }
 
-.background-root { 
-  background-color: var(--root-color);
-  color:white;
-  border-bottom: 2px solid white;
+#wrap-task .icon-plus { 
+  color: green;
+}
+
+.task-form { 
+  margin-left: 24px; 
+  margin-right: 24px;
+}
+
+.input-custom { 
+  width: 100%;
+  outline: none;
+  padding-left: 16px;
+  border: none;
 }
 
 
+.input-list {
+  background-color: var(--root-color);
+  height: 28px;
+  color: white;
+  border-bottom: 2px solid white;
+}
 
+.input-task { 
+  height: 28px;
+  border-bottom: 1.2px solid black;
+
+}
+
+.input-list::placeholder { 
+  color: rgba(250, 250, 250, 0.8)
+}
+
+
+.container-delete { 
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px; 
+}
+
+.delete-btn { 
+  background-color: var(--root-color);
+  border: none;
+  color: white;
+  opacity: 0.8;
+}
+
+.delete-btn:hover { 
+   opacity: 0.6;
+   cursor: pointer;
+}
 
 
 /* todo Custom checkbox */
 .container {
   display: block;
   position: relative;
-  /* padding-left: 35px; */
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 14px;
@@ -124,6 +187,7 @@ body {
   user-select: none;
   border-bottom: 0.5px solid gray;
   padding: 6px 35px;
+
 }
 
 /* Hide the browser's default checkbox */
@@ -138,7 +202,7 @@ body {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 7px;
+  top: 5px;
   left: 0;
   height: 18px;
   width: 18px;
@@ -181,22 +245,3 @@ body {
 }
 
 
-.delete-btn { 
-  background-color: var(--root-color);
-  border: none;
-  color: white;
-  opacity: 1;
-  padding: 6px 0px;
-}
-
-.delete-btn:hover { 
-  cursor: pointer;
-  opacity: 0.4;
-
-
-}
-
-.container-delete { 
-  display: flex;
-  flex-direction: column;
-}
