@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <script defer src="./javasctipt/app.js"></script>
 </head>
 <body>
-    <div id="wrap-lists" class="color-while">
+    <div id="wrap-list" class="wrap-list">
         <h2 class="title">My lists</h2>
-        <form action="" id='form-add-list'>
-            <input
-            id="input-add-list"
-            class="input-add backgorup background-root"
-             type="text"
-            placeholder="new list"
-            >
+        <form data-new-list-form class="add-form">
+            <span class="icon-plus">+</span>
+            <input data-new-list-input class="input-custom input-list" type="text" placeholder="new list">
         </form>
-        
-        <ul id="lists"></ul>
+        <ul class="lists" data-wrap-list>
+            <li class="list">List 1</li>
+            <li class="list">List 2</li>
+            <li class="list">List 3</li>
+        </ul>
     </div>
 
-    <div id="wrap-tasks">
-        <div id="header-task">
-           <h3 id="title">Title</h3>
-           <span id="total-tasks">5</span>
+    <div id="wrap-task" class="wrap-task">
+        <div class="task" data-display-task='flex'>
+            <div class="header-task">
+                <h3 data-title-list>Title</h3>
+                <span data-total-not-complete class="task-not-complete">tasks not completed is 5</span>
+            </div>
+            <div class="body-task" data-wrap-task>
+                <label class="container"> ahihi
+                    <input checked type="checkbox">
+                    <span class="checkmark"></span>
+                    <div class="mark-checkbox"></div>
+                </label>
+            </div>
+            <form data-new-task-form class="add-form task-form">
+                <span class="icon-plus">+</span>
+                <input data-new-task-input class="input-custom input-task" placeholder="new task name" type="text">
+            </form>
         </div>
-        <div id="body-task"></div>
-        <form class="new-task" id="form-add-task" action="">
-            <input
-            id="input-task"
-            placeholder="new task"
-            type="text">
-        </form>
-    </div>
-    <div class="container-delete" data-delete>
-        <button class="delete-btn" data-clear-lists>clear completed lists</button>
-        <button class="delete-btn" data-delete-tasks>delete tasks</button>
-    </div>
-
-    <template data-temp>
-        <!-- ahihi -->
-        <div>
-            Hello word
+        <div class="container-delete">
+            <button class="delete-btn" data-delete-list>delete list</button>
+            <button class="delete-btn" data-delete-task>delete compeleted task</button>
         </div>
-    </template>
+    </div>
 </body>
 </html>
